@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Request a Demo Popup</title>
+<style>
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup box */
+.popup-box {
+  background: #f0f8ff;
+  width: 700px;
+  max-width: 95%;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+/* Left side - testimonial & ratings */
+.popup-left {
+  background: #e6f0ff;
+  padding: 20px 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.popup-left h3 {
+  font-size: 14px;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.testimonial-box {
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  font-size: 13px;
+}
+
+.testimonial-box strong {
+  display: block;
+  margin-top: 8px;
+  font-weight: bold;
+}
+
+.ratings {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.ratings h4 {
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #2c3e50;
+}
+
+.ratings img {
+  height: 30px;
+  margin: 0 3px;
+}
+
+/* Right side - form */
+.popup-right {
+  flex: 1;
+  background: #fff;
+  padding: 20px 15px;
+  position: relative;
+  box-sizing: border-box;
+}
+
+.popup-right h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+.popup-right form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Input container */
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.input-container label {
+  font-size: 13px;
+  color: #333;
+}
+
+/* Make inputs full width and respect padding */
+.input-container input,
+.input-container textarea,
+.input-container select {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 13px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* Captcha */
+.captcha-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 5px;
+}
+
+.captcha-container input {
+  flex: 1;
+  box-sizing: border-box;
+}
+
+/* Submit button */
+.popup-right button[type="submit"] {
+  background: #6a68e4;
+  color: #fff;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.popup-right button[type="submit"]:hover {
+  background: #c9302c;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .popup-box {
+    flex-direction: column;
+  }
+  .popup-left, .popup-right {
+    padding: 15px 10px;
+  }
+}
+</style>
+</head>
+<body>
+
+<div class="popup-overlay">
+  <div class="popup-box">
+
+    <!-- Left section -->
+    <div class="popup-left">
+      <h3>"Here's what our customers are saying"</h3>
+      <div class="testimonial-box">
+        Switching to Zoho Books transformed our motorcycle accessories business. I needed software that could provide real-time insights and operational visibility. With Zoho Books, we achieved over 150% growth.
+        <strong>KHAIS RAHMAN</strong>
+        LRL MOTORS
+      </div>
+      <div class="ratings">
+        <h4>Rated by the best</h4>
+        <img src="images/resize_lakepalace.png" alt="GetApp 4.4/5">
+        <img src="images/resize_elixer.png" alt="Capterra 4.4/5">
+        <img src="images/resize_forthhill.png" alt="G2 4.5/5">
+      </div>
+    </div>
+
+    <!-- Right section -->
+    <div class="popup-right">
+      <h2>Request a demo</h2>
+      <form>
+        <div class="input-container">
+          <label>Name <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+
+        <div class="input-container">
+          <label>Company Name <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your company name" required>
+        </div>
+
+        <div class="input-container">
+          <label>Work Email <span style="color:red">*</span></label>
+          <input type="email" placeholder="Enter your email" required>
+        </div>
+
+        <div class="input-container">
+          <label>Phone No <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your phone number" required>
+        </div>
+
+        <div class="input-container">
+          <label>Country <span style="color:red">*</span></label>
+          <select required>
+            <option value="">Select Country</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+          </select>
+        </div>
+
+        <div class="input-container">
+          <label>Convenient Date & Time <span style="color:red">*</span></label>
+          <input type="datetime-local" required>
+        </div>
+
+        <div class="captcha-container">
+          <img src="images/captcha.png" alt="Captcha" style="height:30px;">
+          <input type="text" placeholder="Enter captcha" required>
+        </div>
+
+        <p style="font-size:11px; color:#555; margin-top:5px;">
+          By submitting this form, you agree to the processing of personal data according to our <a href="#">Privacy Policy</a>.
+        </p>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+

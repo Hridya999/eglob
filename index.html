@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Eglobe Solutions</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    body {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Hero Section */
+    
+    /* Products Section */
+   #products {
+  padding: 80px 20px;
+  background: #f9fbff;
+  text-align: center;
+}
+
+#products .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+  color: #012b52;
+  position: relative;
+  display: inline-block;
+}
+
+#products .section-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  height: 3px;
+  margin: 8px auto 0;
+  background: #007bff;
+  border-radius: 2px;
+}
+
+#products .row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+#products .card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeUp 0.8s ease forwards;
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+#products .card:nth-child(1) { animation-delay: 0.2s; }
+#products .card:nth-child(2) { animation-delay: 0.4s; }
+#products .card:nth-child(3) { animation-delay: 0.6s; }
+
+@keyframes fadeUp {
+  from { transform: translateY(30px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+#products .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+#products .card h5 {
+  font-size: 1.3rem;
+  color: #105c06;
+  margin-bottom: 15px;
+  font-weight: 700;
+  text-align: center;   /* ✅ Center heading */
+}
+
+#products ul {
+  list-style: none;
+  margin: 0 0 20px;
+  padding: 0;
+  text-align: left;     /* ✅ Keep bullet points aligned left */
+}
+
+#products ul li {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #444;
+  position: relative;
+  padding-left: 20px;
+}
+
+#products ul li::before {
+  content: "✔";
+  position: absolute;
+  left: 0;
+  color: #007bff;
+  font-weight: bold;
+}
+
+#products .btn {
+  background: #007bff;
+  border: none;
+  color: #fff;
+  padding: 12px 20px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  align-self: center;   /* ✅ Center button */
+  margin-top: auto; 
+  width: 300px; 
+  height: auto;   /* ✅ Push button to bottom */
+}
+
+#products .btn:hover {
+  background: #0056b3;
+}
+
+
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .hero-left1 h1 { font-size: 2.4rem; }
+    }
+
+    @media (max-width: 768px) {
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        padding: 40px 20px;
+      }
+
+      .hero-left1 { max-width: 100%; }
+
+      .hero-left1 h1 { font-size: 1.8rem; }
+
+      .bullet-box ul { grid-template-columns: 1fr; }
+
+      .hero-right {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+        width: 100%;
+      }
+
+      .hero-right button {
+        flex: 1 1 45%;
+        max-width: 250px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-left1 h1 {
+        font-size: 1.5rem;
+        padding: 12px 15px;
+      }
+
+      .bullet-box { padding: 15px; }
+
+      .hero-right button {
+        flex: 1 1 100%;
+        max-width: 100%;
+      }
+    }
+    .trusted {
+  position: relative;
+  padding: 80px 20px;
+  text-align: center;
+  color: #fff;
+}
+.trusted .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.trusted-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.trusted-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* Carousel */
+.carousel {
+  position: relative;
+  overflow: hidden;
+}
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+.review-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  background: rgba(255,255,255,0.1);
+  border-radius: 12px;
+  padding: 25px;
+  margin: 0 10px;
+  backdrop-filter: blur(5px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+.review-card img.profile-img {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  object-fit: cover;
+}
+.review-card h3 {
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+.stars {
+  color: gold;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+}
+.review-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #f0f0f0;
+}
+
+/* Arrows */
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.8);
+  border: none;
+  font-size: 1.5rem;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 3;
+  transition: background 0.3s;
+}
+.carousel-btn:hover {
+  background: #007bff;
+  color: #fff;
+}
+.carousel-btn.prev { left: 15px; }
+.carousel-btn.next { right: 15px; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  .review-card {
+    padding: 20px;
+  }
+  .carousel-btn {
+    font-size: 1.2rem;
+    padding: 8px 12px;
+  }
+}
+.brand-ribbon {
+  position: relative;
+  padding: 40px 0;
+  overflow: hidden;
+}
+.brand-ribbon .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  z-index: 1;
+}
+.brand-container {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  overflow: hidden;
+}
+.brand-track {
+  display: flex;
+  gap: 60px;
+  animation: scroll 25s linear infinite;
+}
+.brand-track img {
+  height: 60px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* makes logos white – optional */
+  opacity: 0.9;
+  transition: transform 0.3s ease;
+}
+.brand-track img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-track {
+    gap: 40px;
+    animation-duration: 15s;
+  }
+  .brand-track img {
+    height: 40px;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <!-- Hero Section -->
+ <section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-left1">
+      <h1>Run your hotel from one dashboard — increase revenue & automate operations</h1>
+      <div class="bullet-box">
+        <ul>
+          <li><h3>PMS-Property Management System</h3></li>
+          <li><h3>Channel Manager</h3></li>
+          <li><h3>POS</h3></li>
+          <li><h3>Booking Engine</h3></li>
+          <li><h3>Custom Website</h3></li>
+          <li><h3>Payment Gateway Integration</h3></li>
+          <li><h3>GMB-Google My Business</h3></li>
+          <li><h3>SM-Social Media</h3></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="hero-right">
+        
+  <!-- Book/demo SVG icon -->
+<button id="bookDemoBtn" class="demo-btn">
+  <svg xmlns="http://www.w3.org/2000/svg" class="demo-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16H5V4h14v14zM7 6h10v2H7V6zm0 4h10v2H7v-2z"/>
+  </svg>
+  <span>Book Your Demo</span>
+</button>
+
+<!-- Popup -->
+<div class="popup-overlay" id="demoPopup">
+  <div class="popup-box">
+
+    <!-- Left Section -->
+    <div class="popup-left">
+      <h3>"Here's what our customers are saying"</h3>
+      <div class="testimonial-box">
+        Switching to Zoho Books transformed our motorcycle accessories business. I needed software that could provide real-time insights and operational visibility. With Zoho Books, we achieved over 150% growth.
+        <strong>KHAIS RAHMAN</strong>
+        LRL MOTORS
+      </div>
+      <div class="ratings">
+        <h4>Rated by the best</h4>
+        <img src="images/getapp.png" alt="GetApp 4.4/5">
+        <img src="images/capterra.png" alt="Capterra 4.4/5">
+        <img src="images/g2.png" alt="G2 4.5/5">
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="popup-right">
+      <span class="close-btn" id="closePopup">&times;</span>
+      <h2>Request a Demo</h2>
+      <form>
+        <div class="input-container">
+          <label>Name <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your name" required>
+        </div>
+        <div class="input-container">
+          <label>Company Name <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your company name" required>
+        </div>
+        <div class="input-container">
+          <label>Work Email <span style="color:red">*</span></label>
+          <input type="email" placeholder="Enter your email" required>
+        </div>
+        <div class="input-container">
+          <label>Phone No <span style="color:red">*</span></label>
+          <input type="text" placeholder="Enter your phone number" required>
+        </div>
+        <div class="input-container">
+          <label>Country <span style="color:red">*</span></label>
+          <select required>
+            <option value="">Select Country</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>UK</option>
+          </select>
+        </div>
+        <div class="input-container">
+          <label>Convenient Date & Time <span style="color:red">*</span></label>
+          <input type="datetime-local" required>
+        </div>
+        <div class="captcha-container">
+          <img src="images/captcha.png" alt="Captcha" style="height:30px;">
+          <input type="text" placeholder="Enter captcha" required>
+        </div>
+        <p style="font-size:11px; color:#555; margin-top:5px;">
+          By submitting this form, you agree to the processing of personal data according to our <a href="#">Privacy Policy</a>.
+        </p>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+
+  </div>
+</div>
+
+<style>
+/* Button */
+.demo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #ff7f50;
+  border: none;
+  padding: 16px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+.demo-btn:hover { background: #e5673f; }
+.demo-icon { width: 20px; height: 20px; }
+
+/* Popup Overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Popup Box */
+.popup-box {
+  background: #f0f8ff;
+  width: 700px;
+  max-width: 95%;
+  display: flex;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+  font-family: Arial, sans-serif;
+}
+
+/* Left Section */
+.popup-left {
+  background: #e6f0ff;
+  padding: 20px 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.popup-left h3 { font-size: 14px; margin-bottom: 15px; text-align: center; color: #2c3e50; }
+.testimonial-box { background: #fff; padding: 15px; border-radius: 8px; text-align: center; font-style: italic; color: #333; box-shadow: 0 4px 12px rgba(0,0,0,0.05); font-size: 13px; }
+.testimonial-box strong { display: block; margin-top: 8px; font-weight: bold; }
+.ratings { margin-top: 20px; text-align: center; }
+.ratings h4 { margin-bottom: 10px; font-size: 14px; color: #2c3e50; }
+.ratings img { height: 30px; margin: 0 3px; }
+
+/* Right Section */
+.popup-right {
+  flex: 1;
+  background: #fff;
+  padding: 20px 15px;
+  position: relative;
+}
+.popup-right h2 { margin-bottom: 15px; font-size: 18px; color: #1a1a1a; text-align: center; }
+.input-container { display: flex; flex-direction: column; gap: 3px; margin-bottom: 8px; }
+.input-container label { font-size: 13px; color: #333; }
+.input-container input,
+.input-container select { padding: 8px; border-radius: 4px; border: 1px solid #ccc; font-size: 13px; width: 100%; box-sizing: border-box; }
+.captcha-container { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
+.captcha-container input { flex: 1; box-sizing: border-box; }
+.popup-right button[type="submit"] { background: #d9534f; color: #fff; border: none; padding: 10px; border-radius: 5px; font-size: 14px; cursor: pointer; margin-top: 5px; }
+.popup-right button[type="submit"]:hover { background: #c9302c; }
+.close-btn { position: absolute; top: 10px; right: 15px; font-size: 18px; font-weight: bold; cursor: pointer; }
+
+/* Responsive */
+@media (max-width: 700px) {
+  .popup-box { flex-direction: column; }
+  .popup-left, .popup-right { padding: 15px 10px; }
+}
+</style>
+
+<script>
+// Show popup
+document.getElementById("bookDemoBtn").addEventListener("click", function() {
+  document.getElementById("demoPopup").style.display = "flex";
+});
+
+// Close popup
+document.getElementById("closePopup").addEventListener("click", function() {
+  document.getElementById("demoPopup").style.display = "none";
+});
+
+// Close on clicking outside
+window.addEventListener("click", function(e) {
+  if (e.target === document.getElementById("demoPopup")) {
+    document.getElementById("demoPopup").style.display = "none";
+  }
+});
+</script>
+
+
+  <button class="download-btn" onclick="window.location.href='images/DIGITALROOMZ-EGLOBE SOLUTIONS_BROCHURE.pdf'">
+  <!-- Download SVG icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="download-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M5 20h14v-2H5v2zm7-18L5.33 9h3.67v4h4V9h3.67L12 2z"/>
+  </svg>
+  <span>Download Brochure</span>
+</button>
+
+
+<style>
+.download-btn {
+  display: inline-flex;        /* icon and text in a row */
+  align-items: center;         /* vertical centering */
+  justify-content: center;     /* horizontal centering */
+  gap: 10px;                   /* space between icon and text */
+  background: #17a2b8;         /* blue-ish button */
+  border: none;
+  padding: 16px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background: #117a8b;
+}
+
+.download-icon {
+  width: 20px;                 /* icon size */
+  height: 20px;
+  display: inline-block;
+}
+</style>
+
+     <button class="chat-btn" onclick="window.open('https://wa.me/917306229766', '_blank')">
+  <!-- Chat SVG icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="chat-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M2 2v20l4-4h16V2H2zm18 12H6.83L4 17.83V4h16v10z"/>
+  </svg>
+  <span>Chat</span>
+</button>
+
+
+<style>
+.chat-btn {
+  display: inline-flex;        /* icon and text in a row */
+  align-items: center;         /* vertical centering */
+  justify-content: center;     /* horizontal centering */
+  gap: 10px;                   /* spacing between icon and text */
+  background: #0077ff;
+  border: none;
+  padding: 16px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.chat-btn:hover {
+  background: #005ec2;
+}
+
+.chat-icon {
+  width: 20px;                 /* icon size */
+  height: 20px;
+  display: inline-block;
+}
+</style>
+
+     <button class="call-btn">
+  <!-- Phone SVG icon -->
+  <svg xmlns="http://www.w3.org/2000/svg" class="call-icon" viewBox="0 0 24 24" fill="currentColor">
+    <path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.2.48 2.5.74 3.84.74a1 1 0 011 1V20a1 1 0 01-1 1C10.74 21 3 13.26 3 4a1 1 0 011-1h3.5a1 1 0 011 1c0 1.34.26 2.64.74 3.84a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+  </svg>
+  <span>Request a Call</span>
+</button>
+
+<style>
+.call-btn {
+  display: inline-flex;        /* icon and text in a row */
+  align-items: center;         /* vertical centering */
+  justify-content: center;     /* horizontal centering */
+  gap: 10px;                   /* space between icon and text */
+  background: #28a745;         /* green button */
+  border: none;
+  padding: 16px 25px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  font-size: 18px;
+  transition: background 0.3s ease;
+}
+
+.call-btn:hover {
+  background: #1e7e34;
+}
+
+.call-icon {
+  width: 20px;                 /* icon size */
+  height: 20px;
+  display: inline-block;
+}
+</style>
+
+    </div>
+  </div>
+</section>
+
+<style>
+.hero {
+  position: relative;
+  background: url("images/bg7.png") no-repeat center center/cover;
+  color: #fff;
+  padding: 80px 20px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.hero-left1 {
+  flex: 1;
+}
+
+.hero-left1 h1 {
+  font-size: 40px;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.bullet-box {
+  background: rgba(255, 255, 255, 0.1); /* transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 20px;
+  max-width: 500px; /* reduced width */
+  width: 100%;       /* responsive */
+  margin: 0;         /* align with heading */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.bullet-box ul {
+  list-style: disc;
+  padding-left: 20px; /* keep some space for bullets */
+  margin-left: 0;
+}
+
+.bullet-box li h3 {
+  font-size: 18px;
+  margin: 6px 0;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 45px;
+  margin-top: 40px; /* moves the whole section down */
+}
+
+
+.hero-right button {
+  background: #0077ff;
+  border: none;
+  padding: 16px 25px; /* increased button width */
+  border-radius: 8px;
+  cursor: pointer;
+  color: #fff;
+  text-align: center;
+  transition: background 0.3s ease;
+}
+
+.hero-right button:hover {
+  background: #005ec2;
+}
+
+.hero-right h2 {
+  margin: 0;
+  font-size: 18px;
+}
+
+/* ✅ Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+  }
+
+  .hero-left1 h1 {
+    font-size: 26px;
+    line-height: 1.4;
+    margin-bottom: 15px;
+  }
+
+  .bullet-box ul {
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .bullet-box li h3 {
+    font-size: 16px;
+  }
+
+  .hero-right {
+    width: 100%;
+    align-items: center;
+  }
+
+  .hero-right button {
+    width: 90%;
+  }
+}
+</style>
+
+
+
+  <!-- Products Section -->
+  <section id="products">
+    <div class="container">
+      <h2 class="section-title">Products & Benefits</h2>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h5>Cloud PMS</h5>
+            <ul>
+              <li>Frontdesk, housekeeping, billing</li>
+              <li>Multi-property support</li>
+              <li>Reports & insights</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Channel Manager</h5>
+            <ul>
+              <li>OTA Sync</li>
+              <li>Rate & restriction rules</li>
+              <li>Auto updates</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Booking Engine & Payment</h5>
+            <ul>
+              <li>Direct bookings</li>
+              <li>Multiple gateway integration</li>
+              <li>Secure settlements</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Trusted Customers Section -->
+<section class="trusted" style="background: url('images/bg7.png') no-repeat center center/cover;">
+  <div class="overlay"></div>
+  <div class="trusted-container">
+    <h2 class="trusted-title">Our Trusted Customers</h2>
+    
+    <div class="carousel">
+      <!-- Review Cards -->
+      <div class="carousel-track">
+        <div class="review-card">
+          <img src="images/person1.jpg" alt="Customer 1" class="profile-img">
+          <h3>Rahul Sharma</h3>
+          <div class="stars">★★★★★</div>
+          <p><h3>Great experience with Eglobe! Their PMS and booking engine boosted our occupancy rate.</h3></p>
+        </div>
+        <div class="review-card">
+          <img src="images/person2.jpg" alt="Customer 2" class="profile-img">
+          <h3>Anjali Nair</h3>
+          <div class="stars">★★★★☆</div>
+          <p><h3>The team was very supportive during setup. Channel manager is very powerful.</h3></p>
+        </div>
+        <div class="review-card">
+          <img src="images/person3.jpg" alt="Customer 3" class="profile-img">
+          <h3>Vikram Rao</h3>
+          <div class="stars">★★★★★</div>
+          <p><h3>Excellent product! Automated operations saved us a lot of time and effort.</p>
+        </div>
+      </div>
+
+      <!-- Arrows -->
+      <button class="carousel-btn prev">&#10094;</button>
+      <button class="carousel-btn next">&#10095;</button>
+    </div>
+  </div>
+</section>
+<script>
+const track = document.querySelector('.carousel-track');
+const slides = Array.from(track.children);
+const prevButton = document.querySelector('.carousel-btn.prev');
+const nextButton = document.querySelector('.carousel-btn.next');
+
+let currentSlide = 0;
+
+function updateCarousel() {
+  const slideWidth = slides[0].getBoundingClientRect().width;
+  track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+}
+
+nextButton.addEventListener('click', () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+});
+
+prevButton.addEventListener('click', () => {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  updateCarousel();
+});
+
+// Auto Slide every 5s
+setInterval(() => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  updateCarousel();
+}, 5000);
+
+window.addEventListener('resize', updateCarousel);
+</script>
+<section id="products">
+    <div class="container">
+      <h2 class="section-title">Products & Benefits</h2>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h5>Cloud PMS</h5>
+            <ul>
+              <li>Frontdesk, housekeeping, billing</li>
+              <li>Multi-property support</li>
+              <li>Reports & insights</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Channel Manager</h5>
+            <ul>
+              <li>OTA Sync</li>
+              <li>Rate & restriction rules</li>
+              <li>Auto updates</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Booking Engine & Payment</h5>
+            <ul>
+              <li>Direct bookings</li>
+              <li>Multiple gateway integration</li>
+              <li>Secure settlements</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Ribbon Section -->
+<!-- Ribbon Section -->
+<section class="brand-ribbon" style="background: url('images/bg7.png') no-repeat center center/cover;">
+  <div class="overlay"></div>
+  <div class="brand-container">
+    <div class="brand-track">
+      <!-- Brand Logos -->
+      <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
+      <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
+      <div class="brand-logo"><img src="images/vagaaa.png" alt="Brand 5"></div>
+      
+
+      <!-- Duplicate for seamless loop -->
+      <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
+      <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
+      <div class="brand-logo"><img src="images/vagaaa.png" alt="Brand 5"></div>
+      
+    </div>
+  </div>
+</section>
+
+<style>
+.brand-ribbon {
+  position: relative;
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+.brand-ribbon .overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.4);
+  z-index: 1;
+}
+
+.brand-container {
+  position: relative;
+  z-index: 2;
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.brand-track {
+  display: flex;
+  gap: 40px; /* equal distance between logos */
+  animation: scroll 35s linear infinite;
+}
+
+.brand-logo {
+  flex: 0 0 auto;
+  width: 130px;   /* same width for all */
+  height: 70px;   /* same height for all */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  padding: 8px;   /* equal padding inside */
+  border-radius: 8px;
+}
+
+.brand-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;  /* keeps proportions */
+  opacity: 0.95;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.brand-logo img:hover {
+  transform: scale(1.1);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .brand-track {
+    gap: 25px;
+    animation-duration: 20s; /* faster on mobile */
+  }
+
+  .brand-logo {
+    width: 90px;
+    height: 50px;
+    padding: 6px;
+  }
+}
+</style>
+
+ <section id="products">
+    <div class="container">
+      <h2 class="section-title">Products & Benefits</h2>
+      <div class="row">
+        <div class="col">
+          <div class="card">
+            <h5>Cloud PMS</h5>
+            <ul>
+              <li>Frontdesk, housekeeping, billing</li>
+              <li>Multi-property support</li>
+              <li>Reports & insights</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Channel Manager</h5>
+            <ul>
+              <li>OTA Sync</li>
+              <li>Rate & restriction rules</li>
+              <li>Auto updates</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+        <div class="col">
+          <div class="card">
+            <h5>Booking Engine & Payment</h5>
+            <ul>
+              <li>Direct bookings</li>
+              <li>Multiple gateway integration</li>
+              <li>Secure settlements</li>
+            </ul>
+            <button class="btn">Request Call</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<script>
+const btn = document.getElementById('bookDemoBtn');
+const popup = document.getElementById('demoPopup');
+const closeBtn = document.getElementById('closePopup');
+
+// Show popup when button clicked
+btn.addEventListener('click', () => {
+  popup.style.display = 'flex';
+});
+
+// Close popup when clicking ×
+closeBtn.addEventListener('click', () => {
+  popup.style.display = 'none';
+});
+
+// Close popup when clicking outside the popup box
+popup.addEventListener('click', (e) => {
+  if (e.target === popup) {
+    popup.style.display = 'none';
+  }
+});
+</script>
+<!-- Focused Promo Section -->
+<!-- Centered Promo Section -->
+<!-- Centered Promo Section with Background Image -->
+<section class="promo-highlight">
+  <div class="promo-container">
+    <div class="promo-content">
+      <h2>Book Your Demo Instantly</h2>
+      <p>Experience our solution firsthand. One click to schedule a personalized demo with our experts.</p>
+      <button id="bookDemoBtn" class="highlight-btn demo-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+          <path d="M19 2H5c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 16H5V4h14v14zM7 6h10v2H7V6zm0 4h10v2H7v-2z"/>
+        </svg>
+        <span>Book Your Demo</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+.promo-highlight {
+  background: url('images/ads.png') center center/cover no-repeat;
+  padding: 80px 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: relative;
+  overflow: hidden;
+  animation: fadeInSection 1s ease forwards;
+}
+
+.promo-highlight::before {
+  content: "";
+  position: absolute;
+  top:0;
+  left:0;
+  width:1000%;
+  height:100%;
+  background: rgba(14, 18, 49, 0.3); /* optional dark overlay for text readability */
+  z-index: 1;
+}
+
+.promo-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 20px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+.promo-content h2 {
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.promo-content p {
+  font-size: 16px;
+  color: #573d3d;
+  margin-bottom: 25px;
+}
+
+.highlight-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 30px;
+  font-size: 18px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  background: #161642;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight-btn:hover {
+  background: #2a2a6d; 
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(56, 42, 124, 0.3);
+}
+
+
+.cta-icon {
+  width: 24px;
+  height: 24px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% {opacity:0; transform: translateY(50px);}
+  100% {opacity:1; transform: translateY(0);}
+}
+@keyframes fadeInSection {
+  0% {opacity:0;}
+  100% {opacity:1;}
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .promo-highlight {
+    padding: 70px 20px;
+  }
+  .promo-content h2 {
+    font-size: 28px;
+  }
+  .promo-content p {
+    font-size: 14px;
+  }
+  .highlight-btn {
+    width: 80%;
+    justify-content: center;
+  }
+}
+</style>
+<!-- =========================
+     Standalone Contact Section
+     ========================= -->
+<section class="contact-section-standalone" id="contact">
+  <div class="contact-container">
+
+    <!-- LEFT: info & CTAs -->
+    <div class="contact-left">
+      <h2>Let’s get in touch</h2>
+      <p class="contact-lead">
+        Have a question or want a personalized demo? Reach out via the best way that works for you.
+      </p>
+
+      <div class="contact-cards">
+        <div class="card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="24" height="24">
+    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 
+             1.1.9 2 2 2h16c1.1 0 2-.9 
+             2-2V6c0-1.1-.9-2-2-2zm0 
+             4l-8 5-8-5V6l8 5 8-5v2z"/>
+  </svg>
+          <div class="card-body">
+            <h3>Email</h3>
+            <a href="mailto:support@example.com">support@example.com</a>
+          </div>
+        </div>
+        <div class="card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="24" height="24">
+    <path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.48 2.53.74 3.88.74a1 1 0 011 1v3.5a1 1 0 01-1 1C10.07 21 3 13.93 3 5.5a1 1 0 011-1H7.5a1 1 0 011 1c0 1.35.26 2.67.74 3.88a1 1 0 01-.21 1.11l-2.2 2.2z"/>
+  </svg>
+          <div class="card-body">
+            <h3>Call</h3>
+            <a href="tel:+919876543210">+91 98765 43210</a>
+          </div>
+        </div>
+        <div class="card">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="black" viewBox="0 0 24 24" width="24" height="24">
+    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 
+             7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 
+             9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 
+             2.5-2.5 2.5 1.12 2.5 2.5-1.12 
+             2.5-2.5 2.5z"/>
+  </svg>
+          <div class="card-body">
+            <h3>Visit</h3>
+            <address>123 Tech Park, Kochi, Kerala, India</address>
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-ctas">
+        <button type="button" class="cta-btn demo" data-action="demo">Book Your Demo</button>
+        <button type="button" class="cta-btn call" data-action="call">Request a Call</button>
+      </div>
+    </div>
+
+    <!-- RIGHT: form -->
+    <div class="contact-right">
+      <h3>Send us a message</h3>
+      <form id="contactFormStandalone" novalidate>
+        <div class="form-row">
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+        </div>
+        <input type="text" name="subject" placeholder="Subject" required>
+        <input type="tel" name="phone" placeholder="Phone (Optional)">
+        <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+        <button type="submit" class="submit-btn">Send Message</button>
+        <div id="formStatus" class="form-status"></div>
+      </form>
+    </div>
+
+  </div>
+</section>
+
+<style>
+/* ====== Standalone Contact Section Styles ====== */
+.contact-section-standalone{
+  background:#fff;
+  color:#222;
+  padding:80px 20px;
+  font-family:system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+}
+.contact-container{
+  max-width:1200px;
+  margin:0 auto;
+  display:grid;
+  grid-template-columns:1fr 480px;
+  gap:48px;
+}
+.contact-left h2{ font-size:32px; margin-bottom:12px; }
+.contact-lead{ margin-bottom:24px; color:#555; line-height:1.55; }
+
+/* Cards */
+.contact-cards{ display:grid; gap:16px; margin-bottom:20px; }
+.card{
+  display:flex; gap:12px; align-items:center;
+  background:#f8f8f9; padding:14px; border-radius:10px;
+  border:1px solid #eee; transition: transform .22s ease, box-shadow .22s ease;
+}
+.card:hover{ transform:translateY(-6px); box-shadow:0 12px 30px rgba(17,24,39,0.06); }
+.card-icon{ font-size:22px; width:44px;height:44px; display:flex;align-items:center;justify-content:center; border-radius:8px; background:#fff; border:1px solid #eee; }
+.card-body h3{ margin:0 0 4px 0; font-size:15px; }
+.card-body a, .card-body address{ margin:0; color:#444; font-size:14px; text-decoration:none; }
+
+/* CTA buttons */
+.contact-ctas{ margin-top:18px; display:flex; gap:12px; flex-wrap:wrap; }
+.cta-btn{ background:#346eda; color:#fff; border:none; padding:10px 16px; border-radius:8px; font-weight:600; cursor:pointer; transition: transform .18s ease, box-shadow .18s ease; }
+.cta-btn.call{ background:#4caf50; }
+.cta-btn:hover{ transform:translateY(-3px); box-shadow:0 10px 22px rgba(17,24,39,0.08); }
+
+/* Right form */
+.contact-right{ background:#fff; border-radius:12px; padding:22px; border:1px solid #eee; box-shadow:0 8px 30px rgba(11,18,30,0.04); }
+.contact-right h3{ margin:0 0 14px 0; font-size:20px; }
+.contact-right input, .contact-right textarea{
+  width:100%; padding:12px 14px; border-radius:8px; border:1px solid #d6d6d8; font-size:14px; margin-bottom:10px;
+}
+.contact-right textarea{ min-height:124px; resize:vertical; }
+.submit-btn{ background:#1f80da; color:#fff; border:none; padding:12px 18px; border-radius:8px; font-weight:600; cursor:pointer; }
+.submit-btn:hover{ background:#32215a; }
+.form-status{ font-size:14px; color:#0b7a3a; margin-top:6px; }
+
+/* Responsive */
+@media(max-width:980px){
+  .contact-container{ grid-template-columns:1fr; gap:30px; }
+}
+</style>
+
+<script>
+(function(){
+  const form = document.getElementById('contactFormStandalone');
+  const statusEl = document.getElementById('formStatus');
+
+  if(form){
+    form.addEventListener('submit', function(ev){
+      ev.preventDefault();
+      if(!form.checkValidity()){ form.reportValidity(); return; }
+
+      // simulate sending
+      statusEl.textContent = 'Sending…';
+      setTimeout(()=>{
+        statusEl.textContent = 'Thanks! We received your message.';
+        form.reset();
+        setTimeout(()=>{statusEl.textContent='';},5000);
+      },800);
+    });
+  }
+
+  // Optional: wire CTA buttons to your existing popup
+  document.querySelectorAll('.cta-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const popup = document.getElementById('demoPopup');
+      if(popup){ popup.style.display='flex'; document.body.style.overflow='hidden'; }
+    });
+  });
+})();
+</script>
+<footer class="site-footer">
+  <div class="footer-container">
+    <p>&copy; 2025 Digitalroomz. <a href="#">Terms</a> | <a href="#">Privacy Policy</a></p>
+  </div>
+</footer>
+
+<style>
+.site-footer {
+  background-color: #f8f8f8; /* light grey background */
+  padding: 15px 20px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.site-footer a {
+  color: #555;
+  text-decoration: none;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.site-footer a:hover {
+  color: #000;
+}
+
+@media (max-width: 600px) {
+  .site-footer {
+    font-size: 13px;
+    padding: 10px 15px;
+  }
+}
+</style>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
