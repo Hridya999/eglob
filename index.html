@@ -47,9 +47,9 @@ body { width: 100%; height: 100%; }
 }
 .popup-box { background:#f0f8ff; width:800px; max-width:95%; display:flex; border-radius:10px; overflow:hidden; box-shadow:0 8px 30px rgba(0,0,0,0.2); flex-wrap:wrap; }
 .popup-left { flex:1; background:#e6f0ff; padding:20px; display:flex; flex-direction:column; justify-content:flex-start; min-width:280px; }
-.popup-left h3 { font-size:16px; margin-bottom:15px; text-align:center; color:#2c3e50; }
+.popup-left h3 { font-size:16px; margin-bottom:15px; text-align:center; color:#030d18; }
 .testimonial-carousel { display:flex; overflow:hidden; flex-direction:column; gap:10px; }
-.testimonial-box { background:#fff; padding:15px; border-radius:8px; text-align:center; font-style:italic; color:#333; box-shadow:0 4px 12px rgba(0,0,0,0.05); font-size:13px; }
+.testimonial-box { background:#fff; padding:15px; border-radius:8px; text-align:center; font-style:italic; color:#333; box-shadow:0 4px 12px rgba(0,0,0,0.5); font-size:13px; }
 .testimonial-box strong { display:block; margin-top:8px; font-weight:bold; }
 .company-logos { display:flex; justify-content:center; flex-wrap:wrap; gap:10px; margin-top:20px; }
 .company-logos img { height:40px; object-fit:contain; }
@@ -60,6 +60,7 @@ body { width: 100%; height: 100%; }
 .popup-right button[type="submit"] { background:#d9534f; color:#fff; border:none; padding:10px; border-radius:5px; font-size:14px; cursor:pointer; margin-top:5px; width:100%; }
 .popup-right button[type="submit"]:hover { background:#c9302c; }
 .close-btn { position:absolute; top:10px; right:15px; font-size:18px; font-weight:bold; cursor:pointer; }
+
 
 /* RESPONSIVE */
 @media(max-width:1024px){ .popup-box{ flex-direction:column; width:90%; } .popup-left,.popup-right{ min-width:100%; margin-bottom:15px; } }
@@ -199,29 +200,29 @@ function downloadBrochure() {
   <h2 class="section-title">Our Products</h2>
   <div class="row">
     <div class="card">
-      <h5>Software Suite</h5>
+      <h5>Channel Manager</h5>
       <ul>
-        <li>Automated Workflow</li>
-        <li>Secure Cloud Storage</li>
-        <li>AI Insights</li>
+        <li>Eliminate overbookings with real-time syncing</li>
+        <li>Boost occupancy and optimize every booking for maximum revenue</li>
+        <li>Easily manage and update rates with just a click</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>Cloud Platform</h5>
+      <h5>Cloud PMS</h5>
       <ul>
-        <li>Scalable Infrastructure</li>
-        <li>24/7 Monitoring</li>
-        <li>High Security</li>
+        <li>Access Anytime, Anywhere</li>
+        <li>No Expensive Hardware or IT Maintenance</li>
+        <li>Instant updates to availability, rates, and reservations</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>AI Solutions</h5>
+      <h5>Cloud POS</h5>
       <ul>
-        <li>Predictive Analytics</li>
-        <li>Custom ML Models</li>
-        <li>Data Automation</li>
+        <li>Integrated with PMS</li>
+        <li>Reduces Costs, Boosts Efficiency</li>
+        <li>Automates order-taking, KOT printing, and billing to reduce human mistakes.</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
@@ -346,21 +347,27 @@ setInterval(()=> {
         <!-- Review Cards -->
         <div class="review-card" style="flex:0 0 100%; background: rgba(0,0,0,0.5); border-radius:12px; padding:40px 30px; color:#fff; text-align:center; margin-right:10px;">
           <img src="images/person1.jpg" alt="Customer 1" style="width:80px; height:80px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-          <h3>Rahul Sharma</h3>
+          <h3>Hotel Corus,Delhi</h3>
           <div class="stars">★★★★★</div>
-          <p>Great experience with Eglobe! Their PMS and booking engine boosted our occupancy rate.</p>
+          <p>Thanks to eGlobe’s Booking Engine and Google Hotel Ads support, we’ve
+          seen a surge in direct bookings.<br> Our dependency on OTAs has reduced, and our
+                                            profit margins have improved</p>
         </div>
         <div class="review-card" style="flex:0 0 100%; background: rgba(0,0,0,0.5); border-radius:12px; padding:40px 30px; color:#fff; text-align:center; margin-right:10px;">
           <img src="images/person2.jpg" alt="Customer 2" style="width:80px; height:80px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-          <h3>Anjali Nair</h3>
+          <h3>Hotel Grand Park Inn,Delhi</h3>
           <div class="stars">★★★★☆</div>
-          <p>The team was very supportive during setup. Channel manager is very powerful.</p>
+          <p>We were searching for a single solution to manage inventory, rates,
+                                            and bookings—and <br> eGlobe delivered. Their integrated platform makes managing
+                                            multiple OTAs effortless.</p>
         </div>
         <div class="review-card" style="flex:0 0 100%; background: rgba(0,0,0,0.5); border-radius:12px; padding:40px 30px; color:#fff; text-align:center; margin-right:10px;">
           <img src="images/person3.jpg" alt="Customer 3" style="width:80px; height:80px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-          <h3>Vikram Rao</h3>
+          <h3>Sarthak Resort,manali</h3>
           <div class="stars">★★★★★</div>
-          <p>Excellent product! Automated operations saved us a lot of time and effort.</p>
+          <p>The eGlobe team is always there when we need them. From setup to
+                                            ongoing support,<br> they’ve been responsive and professional. Our operations
+                                            and revenue have both benefited.</p>
         </div>
       </div>
 
@@ -370,6 +377,28 @@ setInterval(()=> {
     </div>
   </div>
 </section>
+<style>
+  #trusted-reviews .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.08); /* Change this to desired color and opacity */
+  z-index: 1;
+}
+
+.testimonial-box {
+  background: rgba(255,255,255,0.9); /* optional: semi-transparent card background */
+  padding: 15px;
+  border-radius: 8px;
+  text-align: center;
+  font-style: italic;
+  color: #333;
+  box-shadow: 0 4px 12pxrgba(0,0,0,0.08);;
+  font-size: 13px;
+}
+</style>
 
 <script>
 const track = document.querySelector('#trusted-reviews .carousel-track');
@@ -406,29 +435,29 @@ window.addEventListener('resize', updateCarousel);
   <h2 class="section-title">Our Products</h2>
   <div class="row">
     <div class="card">
-      <h5>Software Suite</h5>
+      <h5>Booking Engine</h5>
       <ul>
-        <li>Automated Workflow</li>
-        <li>Secure Cloud Storage</li>
-        <li>AI Insights</li>
+        <li>Single Page Booking Engine</li>
+        <li>Booking Engine for Mobile Devices</li>
+        <li>Multiple Payment Gateway</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>Cloud Platform</h5>
+      <h5>Website Builder</h5>
       <ul>
-        <li>Scalable Infrastructure</li>
-        <li>24/7 Monitoring</li>
-        <li>High Security</li>
+        <li>Build It Yourself with Easy Templates</li>
+        <li>Mobile & Facebook Friendly</li>
+        <li>SEO-Optimized for Higher Visibility</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>AI Solutions</h5>
+      <h5>OTA Listing</h5>
       <ul>
-        <li>Predictive Analytics</li>
-        <li>Custom ML Models</li>
-        <li>Data Automation</li>
+        <li>Complete OTA Account Setup</li>
+        <li>Professional Listing Optimization</li>
+        <li>Real-Time Inventory & Rate Sync</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
@@ -503,23 +532,26 @@ window.addEventListener('resize', updateCarousel);
 <section class="brand-ribbon" style="background: url('images/bg7.png') no-repeat center center/cover;">
   <div class="overlay"></div>
   <div class="brand-container">
+    <h2 class="brand-title" style="color:#fff; text-align:center; font-size:2rem; margin-bottom:30px;">
+      Our Clients
+    </h2>
     <div class="brand-track">
       <!-- Brand Logos -->
       <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
-      <div class="brand-logo"><img src="images/resize_forthhill.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
       <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
       <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
-      <div class="brand-logo"><img src="images/resize_forthhill.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
       <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
       <div class="brand-logo"><img src="images/vagaaa.png" alt="Brand 5"></div>
       
 
       <!-- Duplicate for seamless loop -->
       <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
-      <div class="brand-logo"><img src="images/resize_forthhill.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
       <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
       <div class="brand-logo"><img src="images/resize_lakepalace.png" alt="Brand 1"></div>
-      <div class="brand-logo"><img src="images/resize_forthhill.png" alt="Brand 2"></div>
+      <div class="brand-logo"><img src="images/resize_gundumalai.png" alt="Brand 2"></div>
       <div class="brand-logo"><img src="images/resize_elixer.png" alt="Brand 4"></div>
       <div class="brand-logo"><img src="images/vagaaa.png" alt="Brand 5"></div>
       
@@ -538,7 +570,7 @@ window.addEventListener('resize', updateCarousel);
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(243, 243, 245, 0.4);
+  background: rgba(0,0,0,0.5);
   z-index: 1;
 }
 
@@ -557,15 +589,20 @@ window.addEventListener('resize', updateCarousel);
 
 .brand-logo {
   flex: 0 0 auto;
-  width: 130px;   /* same width for all */
-  height: 70px;   /* same height for all */
+  width: 130px;
+  height: 70px;
   display: flex;
   align-items: center;
   justify-content: center;
   background: transparent;
-  padding: 8px;   /* equal padding inside */
+  padding: 8px;
   border-radius: 8px;
 }
+
+.brand-logo img {
+  filter: brightness(0) invert(1);
+}
+
 
 .brand-logo img {
   max-width: 100%;
@@ -603,29 +640,29 @@ window.addEventListener('resize', updateCarousel);
   <h2 class="section-title">Our Products</h2>
   <div class="row">
     <div class="card">
-      <h5>Software Suite</h5>
+      <h5>Payment Gateways</h5>
       <ul>
-        <li>Automated Workflow</li>
-        <li>Secure Cloud Storage</li>
-        <li>AI Insights</li>
+        <li>Multi-currency support</li>
+        <li>PCI-DSS compliant security</li>
+        <li>Fraud detection and prevention</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>Cloud Platform</h5>
+      <h5>Meta Search Engines</h5>
       <ul>
-        <li>Scalable Infrastructure</li>
-        <li>24/7 Monitoring</li>
-        <li>High Security</li>
+        <li>Real-time information</li>
+        <li>Improved online presence</li>
+        <li>Cost-effective advertising</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
     <div class="card">
-      <h5>AI Solutions</h5>
+      <h5>PMS (APIs for PMS)</h5>
       <ul>
-        <li>Predictive Analytics</li>
-        <li>Custom ML Models</li>
-        <li>Data Automation</li>
+        <li>Bi-Directional Integration</li>
+        <li>Secure Authentication</li>
+        <li>Comprehensive Documentation</li>
       </ul>
       <button class="btn" onclick="openPopup()">Request a Call</button>
     </div>
@@ -717,7 +754,7 @@ window.addEventListener('resize', updateCarousel);
   </svg>
           <div class="card-body">
             <h3>Email</h3>
-            <a href="mailto:support@example.com">support@example.com</a>
+            <a href="mailto:support@example.com">saleskl@eglobe-solutions.com</a>
           </div>
         </div>
         <div class="card">
@@ -726,7 +763,7 @@ window.addEventListener('resize', updateCarousel);
   </svg>
           <div class="card-body">
             <h3>Call</h3>
-            <a href="tel:+919876543210">+91 98765 43210</a>
+            <a href="tel:+919876543210">+91 8590639531 / 8590633849</a>
           </div>
         </div>
         <div class="card">
@@ -739,7 +776,7 @@ window.addEventListener('resize', updateCarousel);
   </svg>
           <div class="card-body">
             <h3>Visit</h3>
-            <address>123 Tech Park, Kochi, Kerala, India</address>
+            <address>D. No.37/1140, South Kalamassery, Kochi, Kerala 682033</address>
           </div>
         </div>
       </div>
